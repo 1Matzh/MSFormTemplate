@@ -1,0 +1,33 @@
+#form-container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#progress-bar {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.step-indicator {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #fff;
+    border: 2px solid #007bff;
+    color: #007bff;
+    display: inline-block;
+}
+
+.step-line {
+    flex-grow: 1;
+    height: 2px;
+    margin: 0 30px;
+    background-color: #007bff;
+    align-self: center;
+    transition: width 0.5s;
+}

@@ -1,63 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulário Multi-Step</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Multi-Step</title>
 
-  <!-- Custom CSS -->
-  <link href="styles.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="styles.css" rel="stylesheet">
 
-  <!-- Bootstrap CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 offset-md-2 mt-5">
-      <form id="multiStepForm">
-        <div id="step1">
-          <h2>Passo 1</h2>
-          <div class="form-group">
-            <label for="name">Nome:</label>
-            <input type="text" class="form-control" id="name" required>
-          </div>
-          <button class="btn btn-primary next" type="button">Próximo</button>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 mt-5" id="form-container">
+                <div id="progress-bar">
+                    <div class="step-indicator">1</div>
+                    <div class="step-line"></div>
+                    <div class="step-indicator">2</div>
+                    <div class="step-line"></div>
+                    <div class="step-indicator">3</div>
+                  </div>
+                <form id="multiStepForm">
+                    <div id="step1">
+                        <h2>Passo 1</h2>
+                        <div class="form-group">
+                            <label for="name">Nome:</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <button class="btn btn-primary next" type="button">Próximo</button>
+                    </div>
+                    <div id="step2" style="display: none;">
+                        <h2>Passo 2</h2>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <button class="btn btn-secondary prev" type="button">Anterior</button>
+                        <button class="btn btn-primary next" type="button">Próximo</button>
+                    </div>
+                    <div id="step3" style="display: none;">
+                        <h2>Passo 3</h2>
+                        <div class="form-group">
+                            <label for="message">Mensagem:</label>
+                            <textarea class="form-control" id="message" rows="3" required></textarea>
+                        </div>
+                        <button class="btn btn-secondary prev" type="button">Anterior</button>
+                        <button class="btn btn-primary" type="submit">Enviar</button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div id="step2" style="display: none;">
-          <h2>Passo 2</h2>
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" required>
-          </div>
-          <button class="btn btn-secondary prev" type="button">Anterior</button>
-          <button class="btn btn-primary next" type="button">Próximo</button>
-        </div>
-        <div id="step3" style="display: none;">
-          <h2>Passo 3</h2>
-          <div class="form-group">
-            <label for="message">Mensagem:</label>
-            <textarea class="form-control" id="message" rows="3" required></textarea>
-          </div>
-          <button class="btn btn-secondary prev" type="button">Anterior</button>
-          <button class="btn btn-primary" type="submit">Enviar</button>
-        </div>
-      </form>
     </div>
-  </div>
-</div>
 
-<!-- JQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
-<!-- Popper -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js"></script>
+    <!-- Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js"></script>
 
-<!-- Bootstrap JS -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<!-- Custom JS -->
-<script src="script.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
 </body>
+
 </html>

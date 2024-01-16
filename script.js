@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         steps[currentStep].style.display = 'none';
         steps[step].style.display = 'block';
         currentStep = step;
+        updateProgressBar();
     }
 
     function nextStep() {
@@ -22,13 +23,36 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    function updateProgressBar() {
+        const indicators = document.querySelectorAll('.step-indicator');
+        const lines = document.querySelectorAll('.step-line');
+        indicators.forEach((indicator, index) => {
+            if (index <= currentStep) {
+                indicator.style.backgroundColor = '#007bff';
+                indicator.style.color = '#fff';
+            } else {
+                indicator.style.backgroundColor = '#fff';
+                indicator.style.color = '#007bff';
+            }
+        });
+
+        lines.forEach((line, index) => {
+            if (index < currentStep) {
+                line.style.backgroundColor = '#007bff';
+            } else {
+                line.style.backgroundColor = 'rgb(0, 0, 0, 0.2)';
+            }
+        })
+    }
+
+    // Chama updateProgressBar ao carregar o DOM
+    updateProgressBar();
+
     form.addEventListener('submit', function (e) {
         e.preventDefault();
-        const formData = new FormData(form);
-        fetch('process_form.php', {
-            method: 'POST',
-            body: formData
-        });
+        // Aqui você pode adicionar lógica para lidar com o envio do formulário completo
+        // Por exemplo, coletar dados e enviar para um servidor
+        // Ou exibir uma mensagem de confirmação
         alert('Formulário enviado com sucesso!');
     });
 
